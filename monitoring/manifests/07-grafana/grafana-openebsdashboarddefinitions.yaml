@@ -1,0 +1,1933 @@
+apiVersion: v1
+data:
+  openebs-pool-exporter.json: |
+        {
+          "annotations": {
+            "list": [
+              {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+              }
+            ]
+          },
+          "editable": true,
+          "gnetId": null,
+          "graphTooltip": 0,
+          "iteration": 1612438886180,
+          "links": [],
+          "panels": [
+            {
+              "cacheTimeout": null,
+              "colorBackground": false,
+              "colorValue": false,
+              "colors": [
+                "#299c46",
+                "rgba(237, 129, 40, 0.89)",
+                "#d44a3a"
+              ],
+              "datasource": "prometheus",
+              "description": "Status of pool (0, 1, 2, 3, 4, 5, 6) = {\"Offline\", \"Online\", \"Degraded\", \"Faulted\", \"Removed\", \"Unavail\", \"NoPoolsAvailable\"}",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "format": "none",
+              "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+              },
+              "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 0
+              },
+              "id": 9,
+              "interval": null,
+              "links": [],
+              "mappingType": 1,
+              "mappingTypes": [
+                {
+                  "name": "value to text",
+                  "value": 1
+                },
+                {
+                  "name": "range to text",
+                  "value": 2
+                }
+              ],
+              "maxDataPoints": 100,
+              "nullPointMode": "connected",
+              "nullText": null,
+              "postfix": "",
+              "postfixFontSize": "50%",
+              "prefix": "",
+              "prefixFontSize": "50%",
+              "rangeMaps": [
+                {
+                  "from": "null",
+                  "text": "N/A",
+                  "to": "null"
+                }
+              ],
+              "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+              },
+              "tableColumn": "openebs_pool_status{container=\"maya-exporter\", endpoint=\"exporter\", instance=\"10.233.105.75:9500\", job=\"prometheus-metrics-service\", namespace=\"openebs\", pod=\"pwc-cstor-disk-pool-ud2h-547ffbdd45-bt4wm\", pool=\"cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd\", service=\"prometheus-metrics-service\"}",
+              "targets": [
+                {
+                  "expr": "openebs_pool_status{pool=\"$Pool\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "A"
+                }
+              ],
+              "thresholds": "",
+              "title": "Pool Status",
+              "type": "singlestat",
+              "valueFontSize": "80%",
+              "valueMaps": [
+                {
+                  "op": "=",
+                  "text": "Offline",
+                  "value": "0"
+                },
+                {
+                  "op": "=",
+                  "text": "Online",
+                  "value": "1"
+                },
+                {
+                  "op": "=",
+                  "text": "Degraded",
+                  "value": "2"
+                },
+                {
+                  "op": "=",
+                  "text": "Faulted",
+                  "value": "3"
+                },
+                {
+                  "op": "=",
+                  "text": "Removed",
+                  "value": "4"
+                },
+                {
+                  "op": "=",
+                  "text": "Unavailable",
+                  "value": "5"
+                },
+                {
+                  "op": "=",
+                  "text": "No Pools Available",
+                  "value": "6"
+                }
+              ],
+              "valueName": "current"
+            },
+            {
+              "cacheTimeout": null,
+              "colorBackground": false,
+              "colorValue": false,
+              "colors": [
+                "#299c46",
+                "rgba(237, 129, 40, 0.89)",
+                "#d44a3a"
+              ],
+              "datasource": "prometheus",
+              "description": "Status of rebuild on replica (0, 1, 2, 3, 4, 5, 6)= {\"INIT\", \"DONE\", \"SNAP REBUILD INPROGRESS\", \"ACTIVE DATASET REBUILD INPROGRESS\",       \"ERRORED\", \"FAILED\", \"UNKNOWN\"}",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "format": "none",
+              "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+              },
+              "gridPos": {
+                "h": 8,
+                "w": 4,
+                "x": 4,
+                "y": 0
+              },
+              "id": 11,
+              "interval": null,
+              "links": [],
+              "mappingType": 1,
+              "mappingTypes": [
+                {
+                  "name": "value to text",
+                  "value": 1
+                },
+                {
+                  "name": "range to text",
+                  "value": 2
+                }
+              ],
+              "maxDataPoints": 100,
+              "nullPointMode": "connected",
+              "nullText": null,
+              "postfix": "",
+              "postfixFontSize": "50%",
+              "prefix": "",
+              "prefixFontSize": "50%",
+              "rangeMaps": [
+                {
+                  "from": "null",
+                  "text": "N/A",
+                  "to": "null"
+                }
+              ],
+              "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+              },
+              "tableColumn": "openebs_rebuild_status{container=\"maya-exporter\", endpoint=\"exporter\", instance=\"10.233.105.75:9500\", job=\"prometheus-metrics-service\", namespace=\"openebs\", pod=\"pwc-cstor-disk-pool-ud2h-547ffbdd45-bt4wm\", pool=\"cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd\", service=\"prometheus-metrics-service\", vol=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\"}",
+              "targets": [
+                {
+                  "expr": "openebs_rebuild_status{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "A"
+                }
+              ],
+              "thresholds": "",
+              "title": "Replica Rebuilding Status",
+              "type": "singlestat",
+              "valueFontSize": "80%",
+              "valueMaps": [
+                {
+                  "op": "=",
+                  "text": "INIT",
+                  "value": "0"
+                },
+                {
+                  "op": "=",
+                  "text": "DONE",
+                  "value": "1"
+                },
+                {
+                  "op": "=",
+                  "text": "SNAP REBUILD IN PROGRESS",
+                  "value": "2"
+                },
+                {
+                  "op": "=",
+                  "text": "ACTIVE DATASET REBUILD IN PROGRESS",
+                  "value": "3"
+                },
+                {
+                  "op": "=",
+                  "text": "ERRORED",
+                  "value": "4"
+                },
+                {
+                  "op": "=",
+                  "text": "FAILED",
+                  "value": "5"
+                },
+                {
+                  "op": "=",
+                  "text": "UNKNOWN",
+                  "value": "6"
+                }
+              ],
+              "valueName": "current"
+            },
+            {
+              "cacheTimeout": null,
+              "colorBackground": false,
+              "colorValue": false,
+              "colors": [
+                "#299c46",
+                "rgba(237, 129, 40, 0.89)",
+                "#d44a3a"
+              ],
+              "datasource": "prometheus",
+              "description": "Total no of rebuild performed",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "format": "none",
+              "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+              },
+              "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 8,
+                "y": 0
+              },
+              "id": 19,
+              "interval": null,
+              "links": [],
+              "mappingType": 1,
+              "mappingTypes": [
+                {
+                  "name": "value to text",
+                  "value": 1
+                },
+                {
+                  "name": "range to text",
+                  "value": 2
+                }
+              ],
+              "maxDataPoints": 100,
+              "nullPointMode": "connected",
+              "nullText": null,
+              "postfix": "",
+              "postfixFontSize": "50%",
+              "prefix": "",
+              "prefixFontSize": "50%",
+              "rangeMaps": [
+                {
+                  "from": "null",
+                  "text": "N/A",
+                  "to": "null"
+                }
+              ],
+              "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+              },
+              "tableColumn": "openebs_total_rebuild_done{container=\"maya-exporter\", endpoint=\"exporter\", instance=\"10.233.105.75:9500\", job=\"prometheus-metrics-service\", namespace=\"openebs\", pod=\"pwc-cstor-disk-pool-ud2h-547ffbdd45-bt4wm\", pool=\"cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd\", service=\"prometheus-metrics-service\", vol=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\"}",
+              "targets": [
+                {
+                  "expr": "openebs_total_rebuild_done{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "A"
+                }
+              ],
+              "thresholds": "",
+              "title": "Replica Total Rebuild Done Count",
+              "type": "singlestat",
+              "valueFontSize": "80%",
+              "valueMaps": [],
+              "valueName": "current"
+            },
+            {
+              "cacheTimeout": null,
+              "colorBackground": false,
+              "colorValue": false,
+              "colors": [
+                "#299c46",
+                "rgba(237, 129, 40, 0.89)",
+                "#d44a3a"
+              ],
+              "datasource": "prometheus",
+              "description": "Available size of pool from zfs list",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "format": "none",
+              "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+              },
+              "gridPos": {
+                "h": 8,
+                "w": 4,
+                "x": 12,
+                "y": 0
+              },
+              "id": 12,
+              "interval": null,
+              "links": [],
+              "mappingType": 1,
+              "mappingTypes": [
+                {
+                  "name": "value to text",
+                  "value": 1
+                },
+                {
+                  "name": "range to text",
+                  "value": 2
+                }
+              ],
+              "maxDataPoints": 100,
+              "nullPointMode": "connected",
+              "nullText": null,
+              "postfix": "",
+              "postfixFontSize": "50%",
+              "prefix": "",
+              "prefixFontSize": "50%",
+              "rangeMaps": [
+                {
+                  "from": "null",
+                  "text": "N/A",
+                  "to": "null"
+                }
+              ],
+              "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+              },
+              "tableColumn": "{container=\"maya-exporter\", endpoint=\"exporter\", instance=\"10.233.105.75:9500\", job=\"prometheus-metrics-service\", name=\"cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd\", namespace=\"openebs\", pod=\"pwc-cstor-disk-pool-ud2h-547ffbdd45-bt4wm\", service=\"prometheus-metrics-service\"}",
+              "targets": [
+                {
+                  "expr": "openebs_volume_replica_available_size{name=\"$Pool\"}/(1024*1024*1024)",
+                  "format": "time_series",
+                  "interval": "",
+                  "intervalFactor": 1,
+                  "legendFormat": "",
+                  "refId": "A"
+                }
+              ],
+              "thresholds": "",
+              "title": "Available Pool Size",
+              "type": "singlestat",
+              "valueFontSize": "80%",
+              "valueMaps": [],
+              "valueName": "current"
+            },
+            {
+              "cacheTimeout": null,
+              "colorBackground": false,
+              "colorValue": false,
+              "colors": [
+                "#299c46",
+                "rgba(237, 129, 40, 0.89)",
+                "#d44a3a"
+              ],
+              "datasource": "prometheus",
+              "description": "Used size of pool from zfs list",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "format": "none",
+              "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+              },
+              "gridPos": {
+                "h": 8,
+                "w": 4,
+                "x": 16,
+                "y": 0
+              },
+              "id": 13,
+              "interval": null,
+              "links": [],
+              "mappingType": 1,
+              "mappingTypes": [
+                {
+                  "name": "value to text",
+                  "value": 1
+                },
+                {
+                  "name": "range to text",
+                  "value": 2
+                }
+              ],
+              "maxDataPoints": 100,
+              "nullPointMode": "connected",
+              "nullText": null,
+              "postfix": "",
+              "postfixFontSize": "50%",
+              "prefix": "",
+              "prefixFontSize": "50%",
+              "rangeMaps": [
+                {
+                  "from": "null",
+                  "text": "N/A",
+                  "to": "null"
+                }
+              ],
+              "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+              },
+              "tableColumn": "{container=\"maya-exporter\", endpoint=\"exporter\", instance=\"10.233.105.75:9500\", job=\"prometheus-metrics-service\", name=\"cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd\", namespace=\"openebs\", pod=\"pwc-cstor-disk-pool-ud2h-547ffbdd45-bt4wm\", service=\"prometheus-metrics-service\"}",
+              "targets": [
+                {
+                  "expr": "openebs_volume_replica_used_size{name=\"$Pool\"}/(1024*1024*1024)",
+                  "format": "time_series",
+                  "interval": "",
+                  "intervalFactor": 1,
+                  "legendFormat": "",
+                  "refId": "A"
+                }
+              ],
+              "thresholds": "",
+              "title": "Used Pool Size",
+              "type": "singlestat",
+              "valueFontSize": "80%",
+              "valueMaps": [],
+              "valueName": "current"
+            },
+            {
+              "cacheTimeout": null,
+              "colorBackground": false,
+              "colorValue": false,
+              "colors": [
+                "#299c46",
+                "rgba(237, 129, 40, 0.89)",
+                "#d44a3a"
+              ],
+              "datasource": "prometheus",
+              "description": "Used size of pool by replica from zfs list",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "format": "none",
+              "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+              },
+              "gridPos": {
+                "h": 8,
+                "w": 4,
+                "x": 20,
+                "y": 0
+              },
+              "id": 14,
+              "interval": null,
+              "links": [],
+              "mappingType": 1,
+              "mappingTypes": [
+                {
+                  "name": "value to text",
+                  "value": 1
+                },
+                {
+                  "name": "range to text",
+                  "value": 2
+                }
+              ],
+              "maxDataPoints": 100,
+              "nullPointMode": "connected",
+              "nullText": null,
+              "postfix": "",
+              "postfixFontSize": "50%",
+              "prefix": "",
+              "prefixFontSize": "50%",
+              "rangeMaps": [
+                {
+                  "from": "null",
+                  "text": "N/A",
+                  "to": "null"
+                }
+              ],
+              "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+              },
+              "tableColumn": "{container=\"maya-exporter\", endpoint=\"exporter\", instance=\"10.233.105.75:9500\", job=\"prometheus-metrics-service\", name=\"cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd/pvc-e747047b-2181-4661-98cd-c22c830b7e20\", namespace=\"openebs\", pod=\"pwc-cstor-disk-pool-ud2h-547ffbdd45-bt4wm\", service=\"prometheus-metrics-service\"}",
+              "targets": [
+                {
+                  "expr": "openebs_volume_replica_used_size{name=\"$Pool/$Replica\"}/(1024*1024*1024)",
+                  "format": "time_series",
+                  "interval": "",
+                  "intervalFactor": 1,
+                  "legendFormat": "",
+                  "refId": "A"
+                }
+              ],
+              "thresholds": "",
+              "title": "Used Pool Size by replica",
+              "type": "singlestat",
+              "valueFontSize": "80%",
+              "valueMaps": [],
+              "valueName": "current"
+            },
+            {
+              "cacheTimeout": null,
+              "colorBackground": false,
+              "colorValue": false,
+              "colors": [
+                "#299c46",
+                "rgba(237, 129, 40, 0.89)",
+                "#d44a3a"
+              ],
+              "datasource": "prometheus",
+              "description": "Status of replica (0, 1, 2, 3) = {\"Offline\", \"Healthy\", \"Degraded\", \"Rebuilding\"}",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "format": "none",
+              "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+              },
+              "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 4
+              },
+              "id": 10,
+              "interval": null,
+              "links": [],
+              "mappingType": 1,
+              "mappingTypes": [
+                {
+                  "name": "value to text",
+                  "value": 1
+                },
+                {
+                  "name": "range to text",
+                  "value": 2
+                }
+              ],
+              "maxDataPoints": 100,
+              "nullPointMode": "connected",
+              "nullText": null,
+              "postfix": "",
+              "postfixFontSize": "50%",
+              "prefix": "",
+              "prefixFontSize": "50%",
+              "rangeMaps": [
+                {
+                  "from": "null",
+                  "text": "N/A",
+                  "to": "null"
+                }
+              ],
+              "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+              },
+              "tableColumn": "openebs_replica_status{container=\"maya-exporter\", endpoint=\"exporter\", instance=\"10.233.105.75:9500\", job=\"prometheus-metrics-service\", namespace=\"openebs\", pod=\"pwc-cstor-disk-pool-ud2h-547ffbdd45-bt4wm\", pool=\"cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd\", service=\"prometheus-metrics-service\", vol=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\"}",
+              "targets": [
+                {
+                  "expr": "openebs_replica_status{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "A"
+                }
+              ],
+              "thresholds": "",
+              "title": "Replica Status",
+              "type": "singlestat",
+              "valueFontSize": "80%",
+              "valueMaps": [
+                {
+                  "op": "=",
+                  "text": "Offline",
+                  "value": "0"
+                },
+                {
+                  "op": "=",
+                  "text": "Healthy",
+                  "value": "1"
+                },
+                {
+                  "op": "=",
+                  "text": "Degraded",
+                  "value": "2"
+                },
+                {
+                  "op": "=",
+                  "text": "Rebuilding",
+                  "value": "3"
+                }
+              ],
+              "valueName": "current"
+            },
+            {
+              "cacheTimeout": null,
+              "colorBackground": false,
+              "colorValue": false,
+              "colors": [
+                "#299c46",
+                "rgba(237, 129, 40, 0.89)",
+                "#d44a3a"
+              ],
+              "datasource": "prometheus",
+              "description": "Total no of rebuild performed which are failed",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "format": "none",
+              "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+              },
+              "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 8,
+                "y": 4
+              },
+              "id": 20,
+              "interval": null,
+              "links": [],
+              "mappingType": 1,
+              "mappingTypes": [
+                {
+                  "name": "value to text",
+                  "value": 1
+                },
+                {
+                  "name": "range to text",
+                  "value": 2
+                }
+              ],
+              "maxDataPoints": 100,
+              "nullPointMode": "connected",
+              "nullText": null,
+              "postfix": "",
+              "postfixFontSize": "50%",
+              "prefix": "",
+              "prefixFontSize": "50%",
+              "rangeMaps": [
+                {
+                  "from": "null",
+                  "text": "N/A",
+                  "to": "null"
+                }
+              ],
+              "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false
+              },
+              "tableColumn": "openebs_total_failed_rebuild{container=\"maya-exporter\", endpoint=\"exporter\", instance=\"10.233.105.75:9500\", job=\"prometheus-metrics-service\", namespace=\"openebs\", pod=\"pwc-cstor-disk-pool-ud2h-547ffbdd45-bt4wm\", pool=\"cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd\", service=\"prometheus-metrics-service\", vol=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\"}",
+              "targets": [
+                {
+                  "expr": "openebs_total_failed_rebuild{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "A"
+                }
+              ],
+              "thresholds": "",
+              "title": "Replica Total Rebuild Failed Count",
+              "type": "singlestat",
+              "valueFontSize": "80%",
+              "valueMaps": [],
+              "valueName": "current"
+            },
+            {
+              "aliasColors": {},
+              "bars": false,
+              "dashLength": 10,
+              "dashes": false,
+              "datasource": "prometheus",
+              "description": "Read / Write / Sync IO's",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "fill": 1,
+              "fillGradient": 0,
+              "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 0,
+                "y": 8
+              },
+              "hiddenSeries": false,
+              "id": 16,
+              "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+              },
+              "lines": true,
+              "linewidth": 1,
+              "links": [],
+              "nullPointMode": "null",
+              "percentage": false,
+              "pluginVersion": "7.1.0",
+              "pointradius": 5,
+              "points": false,
+              "renderer": "flot",
+              "seriesOverrides": [],
+              "spaceLength": 10,
+              "stack": false,
+              "steppedLine": false,
+              "targets": [
+                {
+                  "expr": "openebs_total_write_count{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "A"
+                },
+                {
+                  "expr": "openebs_total_read_count{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "B"
+                },
+                {
+                  "expr": "openebs_sync_count{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "C"
+                }
+              ],
+              "thresholds": [],
+              "timeFrom": null,
+              "timeRegions": [],
+              "timeShift": null,
+              "title": "IO's count",
+              "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+              },
+              "type": "graph",
+              "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+              },
+              "yaxes": [
+                {
+                  "format": "short",
+                  "label": null,
+                  "logBase": 1,
+                  "max": null,
+                  "min": null,
+                  "show": true
+                },
+                {
+                  "format": "short",
+                  "label": null,
+                  "logBase": 1,
+                  "max": null,
+                  "min": null,
+                  "show": true
+                }
+              ],
+              "yaxis": {
+                "align": false,
+                "alignLevel": null
+              }
+            },
+            {
+              "aliasColors": {},
+              "bars": false,
+              "dashLength": 10,
+              "dashes": false,
+              "datasource": "prometheus",
+              "description": "Write latency on replica",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "fill": 1,
+              "fillGradient": 0,
+              "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 12,
+                "y": 8
+              },
+              "hiddenSeries": false,
+              "id": 17,
+              "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+              },
+              "lines": true,
+              "linewidth": 1,
+              "links": [],
+              "nullPointMode": "null",
+              "percentage": false,
+              "pluginVersion": "7.1.0",
+              "pointradius": 5,
+              "points": false,
+              "renderer": "flot",
+              "seriesOverrides": [],
+              "spaceLength": 10,
+              "stack": false,
+              "steppedLine": false,
+              "targets": [
+                {
+                  "expr": "increase(openebs_write_latency{pool=\"$Pool\", vol=\"$Replica\"}[2m])/increase(openebs_write_block_count{pool=\"$Pool\", vol=\"$Replica\"}[2m])",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "A"
+                },
+                {
+                  "expr": "increase(openebs_read_latency{pool=\"$Pool\", vol=\"$Replica\"}[2m])/increase(openebs_read_block_count{pool=\"$Pool\", vol=\"$Replica\"}[2m])",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "B"
+                },
+                {
+                  "expr": "increase(openebs_sync_latency{pool=\"$Pool\", vol=\"$Replica\"}[2m])/increase(openebs_sync_count{pool=\"$Pool\", vol=\"$Replica\"}[2m])",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "C"
+                }
+              ],
+              "thresholds": [],
+              "timeFrom": null,
+              "timeRegions": [],
+              "timeShift": null,
+              "title": "Latency",
+              "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+              },
+              "type": "graph",
+              "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+              },
+              "yaxes": [
+                {
+                  "format": "ns",
+                  "label": null,
+                  "logBase": 1,
+                  "max": null,
+                  "min": null,
+                  "show": true
+                },
+                {
+                  "format": "short",
+                  "label": null,
+                  "logBase": 1,
+                  "max": null,
+                  "min": null,
+                  "show": true
+                }
+              ],
+              "yaxis": {
+                "align": false,
+                "alignLevel": null
+              }
+            },
+            {
+              "aliasColors": {},
+              "bars": false,
+              "dashLength": 10,
+              "dashes": false,
+              "datasource": "prometheus",
+              "description": "Read / Write / Sync io's in bytes",
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {}
+                },
+                "overrides": []
+              },
+              "fill": 1,
+              "fillGradient": 0,
+              "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 0,
+                "y": 17
+              },
+              "hiddenSeries": false,
+              "id": 18,
+              "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+              },
+              "lines": true,
+              "linewidth": 1,
+              "links": [],
+              "nullPointMode": "null",
+              "percentage": false,
+              "pluginVersion": "7.1.0",
+              "pointradius": 5,
+              "points": false,
+              "renderer": "flot",
+              "seriesOverrides": [],
+              "spaceLength": 10,
+              "stack": false,
+              "steppedLine": false,
+              "targets": [
+                {
+                  "expr": "openebs_total_write_bytes{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "A"
+                },
+                {
+                  "expr": "openebs_total_read_bytes{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "B"
+                },
+                {
+                  "expr": "openebs_rebuild_bytes{pool=\"$Pool\", vol=\"$Replica\"}",
+                  "format": "time_series",
+                  "intervalFactor": 1,
+                  "refId": "C"
+                }
+              ],
+              "thresholds": [],
+              "timeFrom": null,
+              "timeRegions": [],
+              "timeShift": null,
+              "title": "IO's in bytes",
+              "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+              },
+              "type": "graph",
+              "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+              },
+              "yaxes": [
+                {
+                  "format": "bytes",
+                  "label": null,
+                  "logBase": 1,
+                  "max": null,
+                  "min": null,
+                  "show": true
+                },
+                {
+                  "format": "short",
+                  "label": null,
+                  "logBase": 1,
+                  "max": null,
+                  "min": null,
+                  "show": true
+                }
+              ],
+              "yaxis": {
+                "align": false,
+                "alignLevel": null
+              }
+            }
+          ],
+          "schemaVersion": 26,
+          "style": "dark",
+          "tags": [],
+          "templating": {
+            "list": [
+              {
+                "allValue": null,
+                "current": {
+                  "selected": true,
+                  "text": "cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd",
+                  "value": "cstor-c68a1853-1f44-4eb6-8de0-e72363ede6cd"
+                },
+                "datasource": "prometheus",
+                "definition": "",
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "Pool",
+                "options": [],
+                "query": "label_values(openebs_pool_status, pool)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+              },
+              {
+                "allValue": null,
+                "current": {
+                  "selected": true,
+                  "text": "pvc-e747047b-2181-4661-98cd-c22c830b7e20",
+                  "value": "pvc-e747047b-2181-4661-98cd-c22c830b7e20"
+                },
+                "datasource": "prometheus",
+                "definition": "",
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "Replica",
+                "options": [],
+                "query": "label_values(openebs_replica_status, vol)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+              }
+            ]
+          },
+          "time": {
+            "from": "now-5m",
+            "to": "now"
+          },
+          "timepicker": {
+            "refresh_intervals": [
+              "10s",
+              "30s",
+              "1m",
+              "5m",
+              "15m",
+              "30m",
+              "1h",
+              "2h",
+              "1d"
+            ],
+            "time_options": [
+              "5m",
+              "15m",
+              "1h",
+              "6h",
+              "12h",
+              "24h",
+              "2d",
+              "7d",
+              "30d"
+            ]
+          },
+          "timezone": "",
+          "title": "Openebs Pool dashboard",
+          "uid": "JaXeyhjiz",
+          "version": 1
+        }
+kind: ConfigMap
+metadata:
+  managedFields:
+  - apiVersion: v1
+  name: grafana-dashboard-openebs-pool-dashboard
+  namespace: monitoring
+---
+apiVersion: v1
+data:
+  openebs-pg-dashboard.json: |
+            {
+                "annotations": {
+                  "list": [
+                    {
+                      "builtIn": 1,
+                      "datasource": "prometheus",
+                      "enable": true,
+                      "hide": true,
+                      "iconColor": "rgba(0, 211, 255, 1)",
+                      "limit": 100,
+                      "name": "Annotations & Alerts",
+                      "showIn": 0,
+                      "type": "dashboard"
+                    }
+                  ]
+                },
+                "editable": true,
+                "gnetId": null,
+                "graphTooltip": 0,
+                "iteration": 1612431469116,
+                "links": [
+                  {
+                    "icon": "info",
+                    "tags": [],
+                    "targetBlank": true,
+                    "title": "OpenEBS Docs",
+                    "tooltip": "OpenEBS Documentation",
+                    "type": "link",
+                    "url": "http://docs.openebs.io/"
+                  }
+                ],
+                "panels": [
+                  {
+                    "cacheTimeout": null,
+                    "colorBackground": false,
+                    "colorValue": false,
+                    "colors": [
+                      "rgba(245, 54, 54, 0.9)",
+                      "rgba(237, 129, 40, 0.89)",
+                      "rgba(50, 172, 45, 0.97)"
+                    ],
+                    "datasource": "prometheus",
+                    "description": "Elapsed time since Volume was provisioned",
+                    "fieldConfig": {
+                      "defaults": {
+                        "custom": {}
+                      },
+                      "overrides": []
+                    },
+                    "format": "m",
+                    "gauge": {
+                      "maxValue": 100,
+                      "minValue": 0,
+                      "show": false,
+                      "thresholdLabels": false,
+                      "thresholdMarkers": true
+                    },
+                    "gridPos": {
+                      "h": 9,
+                      "w": 6,
+                      "x": 0,
+                      "y": 0
+                    },
+                    "id": 10,
+                    "interval": null,
+                    "links": [],
+                    "mappingType": 1,
+                    "mappingTypes": [
+                      {
+                        "name": "value to text",
+                        "value": 1
+                      },
+                      {
+                        "name": "range to text",
+                        "value": 2
+                      }
+                    ],
+                    "maxDataPoints": 100,
+                    "nullPointMode": "connected",
+                    "nullText": null,
+                    "postfix": "",
+                    "postfixFontSize": "50%",
+                    "prefix": "",
+                    "prefixFontSize": "50%",
+                    "rangeMaps": [
+                      {
+                        "from": "null",
+                        "text": "N/A",
+                        "to": "null"
+                      }
+                    ],
+                    "sparkline": {
+                      "fillColor": "rgba(31, 118, 189, 0.18)",
+                      "full": false,
+                      "lineColor": "rgb(31, 120, 193)",
+                      "show": false
+                    },
+                    "tableColumn": "{castype=\"cstor\", container=\"maya-volume-exporter\", endpoint=\"exporter\", instance=\"10.233.92.152:9500\", job=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\", kubernetes_pod_name=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20-target-756f67b5dfpzvh5\", namespace=\"openebs\", openebs_pv=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\", pod=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20-target-756f67b5dfpzvh5\", service=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\", volName=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\"}",
+                    "targets": [
+                      {
+                        "expr": "openebs_volume_uptime{job!=\"\", openebs_pv=~\"$OpenEBS\"}/60",
+                        "format": "time_series",
+                        "hide": false,
+                        "interval": "",
+                        "intervalFactor": 2,
+                        "legendFormat": "",
+                        "refId": "A",
+                        "step": 30
+                      }
+                    ],
+                    "thresholds": "",
+                    "title": "Uptime",
+                    "type": "singlestat",
+                    "valueFontSize": "80%",
+                    "valueMaps": [
+                      {
+                        "op": "=",
+                        "text": "N/A",
+                        "value": "null"
+                      }
+                    ],
+                    "valueName": "current"
+                  },
+                  {
+                    "cacheTimeout": null,
+                    "colorBackground": false,
+                    "colorValue": true,
+                    "colors": [
+                      "#3f6833",
+                      "rgba(237, 81, 40, 0.89)",
+                      "rgba(245, 54, 54, 0.9)"
+                    ],
+                    "datasource": "prometheus",
+                    "description": "Capacity Used by the Volume",
+                    "fieldConfig": {
+                      "defaults": {
+                        "custom": {}
+                      },
+                      "overrides": []
+                    },
+                    "format": "decgbytes",
+                    "gauge": {
+                      "maxValue": 5,
+                      "minValue": 0,
+                      "show": false,
+                      "thresholdLabels": false,
+                      "thresholdMarkers": false
+                    },
+                    "gridPos": {
+                      "h": 9,
+                      "w": 6,
+                      "x": 6,
+                      "y": 0
+                    },
+                    "id": 2,
+                    "interval": null,
+                    "links": [],
+                    "mappingType": 1,
+                    "mappingTypes": [
+                      {
+                        "name": "value to text",
+                        "value": 1
+                      },
+                      {
+                        "name": "range to text",
+                        "value": 2
+                      }
+                    ],
+                    "maxDataPoints": 100,
+                    "nullPointMode": "connected",
+                    "nullText": null,
+                    "postfix": "",
+                    "postfixFontSize": "50%",
+                    "prefix": "",
+                    "prefixFontSize": "50%",
+                    "rangeMaps": [
+                      {
+                        "from": "null",
+                        "text": "N/A",
+                        "to": "null"
+                      }
+                    ],
+                    "sparkline": {
+                      "fillColor": "rgba(31, 118, 189, 0.18)",
+                      "full": true,
+                      "lineColor": "rgb(31, 120, 193)",
+                      "show": false
+                    },
+                    "tableColumn": "openebs_size_of_volume{container=\"maya-volume-exporter\", endpoint=\"exporter\", instance=\"10.233.92.152:9500\", job=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\", kubernetes_pod_name=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20-target-756f67b5dfpzvh5\", namespace=\"openebs\", openebs_pv=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\", pod=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20-target-756f67b5dfpzvh5\", service=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\"}",
+                    "targets": [
+                      {
+                        "expr": "openebs_size_of_volume{openebs_pv=~\"$OpenEBS\"}",
+                        "format": "time_series",
+                        "hide": false,
+                        "intervalFactor": 2,
+                        "legendFormat": "",
+                        "refId": "A",
+                        "step": 30
+                      }
+                    ],
+                    "thresholds": "",
+                    "title": "Capacity",
+                    "type": "singlestat",
+                    "valueFontSize": "80%",
+                    "valueMaps": [
+                      {
+                        "op": "=",
+                        "text": "N/A",
+                        "value": "null"
+                      }
+                    ],
+                    "valueName": "current"
+                  },
+                  {
+                    "cacheTimeout": null,
+                    "colorBackground": false,
+                    "colorValue": false,
+                    "colors": [
+                      "rgba(245, 54, 54, 0.9)",
+                      "rgba(237, 129, 40, 0.89)",
+                      "rgba(50, 172, 45, 0.97)"
+                    ],
+                    "datasource": "prometheus",
+                    "fieldConfig": {
+                      "defaults": {
+                        "custom": {}
+                      },
+                      "overrides": []
+                    },
+                    "format": "decgbytes",
+                    "gauge": {
+                      "maxValue": 100,
+                      "minValue": 0,
+                      "show": false,
+                      "thresholdLabels": false,
+                      "thresholdMarkers": true
+                    },
+                    "gridPos": {
+                      "h": 9,
+                      "w": 6,
+                      "x": 12,
+                      "y": 0
+                    },
+                    "hideTimeOverride": true,
+                    "id": 12,
+                    "interval": null,
+                    "links": [],
+                    "mappingType": 1,
+                    "mappingTypes": [
+                      {
+                        "name": "value to text",
+                        "value": 1
+                      },
+                      {
+                        "name": "range to text",
+                        "value": 2
+                      }
+                    ],
+                    "maxDataPoints": 100,
+                    "nullPointMode": "connected",
+                    "nullText": null,
+                    "postfix": "",
+                    "postfixFontSize": "50%",
+                    "prefix": "",
+                    "prefixFontSize": "50%",
+                    "rangeMaps": [
+                      {
+                        "from": "null",
+                        "text": "N/A",
+                        "to": "null"
+                      }
+                    ],
+                    "sparkline": {
+                      "fillColor": "rgba(31, 118, 189, 0.18)",
+                      "full": false,
+                      "lineColor": "rgb(31, 120, 193)",
+                      "show": true
+                    },
+                    "tableColumn": "openebs_actual_used{container=\"maya-volume-exporter\", endpoint=\"exporter\", instance=\"10.233.92.152:9500\", job=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\", kubernetes_pod_name=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20-target-756f67b5dfpzvh5\", namespace=\"openebs\", openebs_pv=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\", pod=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20-target-756f67b5dfpzvh5\", service=\"pvc-e747047b-2181-4661-98cd-c22c830b7e20\"}",
+                    "targets": [
+                      {
+                        "expr": "openebs_actual_used{openebs_pv=~\"$OpenEBS\"}",
+                        "format": "time_series",
+                        "intervalFactor": 1,
+                        "refId": "A",
+                        "step": 15
+                      }
+                    ],
+                    "thresholds": "",
+                    "timeFrom": "2h",
+                    "timeShift": null,
+                    "title": "Storage Usage",
+                    "type": "singlestat",
+                    "valueFontSize": "80%",
+                    "valueMaps": [
+                      {
+                        "op": "=",
+                        "text": "N/A",
+                        "value": "null"
+                      }
+                    ],
+                    "valueName": "current"
+                  },
+                  {
+                    "content": "<img src=\"https://raw.githubusercontent.com/openebs/chitrakala/master/OpenEBS%20logo/openebs%20logos-03.png\" alt=\"OpenEBS logo\" style=\"height: 40px;\">\n<span style=\"font-family: 'Open Sans', 'Helvetica Neue', Helvetica; font-size: 25px;vertical-align: text-top;color: #bbbfc2;margin-left: 10px;\">OpenEBS</span>\n\n<p style=\"margin-top: 10px;\">You're monitoring OpenEBS Volumes using Prometheus. For more information, check out the <a href=\"http://openebs.io/\">OpenEBS</a> and <a href=\"http://prometheus.io/\">Prometheus</a> projects. If you would like to retain this volume monitoring data and much more, sign-up for <a href=\"http://mayaonline.io/\">MayaOnline</a> </p>",
+                    "datasource": null,
+                    "fieldConfig": {
+                      "defaults": {
+                        "custom": {}
+                      },
+                      "overrides": []
+                    },
+                    "gridPos": {
+                      "h": 9,
+                      "w": 6,
+                      "x": 18,
+                      "y": 0
+                    },
+                    "id": 11,
+                    "links": [],
+                    "mode": "html",
+                    "options": {
+                      "content": "<img src=\"https://raw.githubusercontent.com/openebs/chitrakala/master/OpenEBS%20logo/openebs%20logos-03.png\" alt=\"OpenEBS logo\" style=\"height: 40px;\">\n<span style=\"font-family: 'Open Sans', 'Helvetica Neue', Helvetica; font-size: 25px;vertical-align: text-top;color: #bbbfc2;margin-left: 10px;\">OpenEBS</span>\n\n<p style=\"margin-top: 10px;\">You're monitoring OpenEBS Volumes using Prometheus. For more information, check out the <a href=\"http://openebs.io/\">OpenEBS</a> and <a href=\"http://prometheus.io/\">Prometheus</a> projects. If you would like to retain this volume monitoring data and much more, sign-up for <a href=\"http://mayaonline.io/\">MayaOnline</a> </p>",
+                      "mode": "html"
+                    },
+                    "pluginVersion": "7.1.0",
+                    "title": "",
+                    "transparent": true,
+                    "type": "text"
+                  },
+                  {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "prometheus",
+                    "description": "IOPS",
+                    "fieldConfig": {
+                      "defaults": {
+                        "custom": {}
+                      },
+                      "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                      "h": 7,
+                      "w": 24,
+                      "x": 0,
+                      "y": 9
+                    },
+                    "hiddenSeries": false,
+                    "id": 3,
+                    "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": false,
+                      "max": true,
+                      "min": true,
+                      "rightSide": true,
+                      "show": true,
+                      "sideWidth": 350,
+                      "total": false,
+                      "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pluginVersion": "7.1.0",
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": true,
+                    "steppedLine": false,
+                    "targets": [
+                      {
+                        "expr": "increase(openebs_reads{job!=\"\", openebs_pv=~\"$OpenEBS\"}[1m])/60",
+                        "format": "time_series",
+                        "hide": false,
+                        "interval": "",
+                        "intervalFactor": 2,
+                        "legendFormat": "{{Reads}}",
+                        "refId": "A",
+                        "step": 2
+                      },
+                      {
+                        "expr": "increase(openebs_writes{job!=\"\", openebs_pv=~\"$OpenEBS\"}[1m])/60",
+                        "format": "time_series",
+                        "interval": "",
+                        "intervalFactor": 2,
+                        "legendFormat": "{{Writes}}",
+                        "refId": "B",
+                        "step": 2
+                      }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "IOPS",
+                    "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                    },
+                    "yaxes": [
+                      {
+                        "$$hashKey": "object:135",
+                        "format": "none",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": "0",
+                        "show": true
+                      },
+                      {
+                        "$$hashKey": "object:136",
+                        "format": "short",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": false
+                      }
+                    ],
+                    "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                    }
+                  },
+                  {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "prometheus",
+                    "description": "Throughput",
+                    "fieldConfig": {
+                      "defaults": {
+                        "custom": {}
+                      },
+                      "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                      "h": 7,
+                      "w": 24,
+                      "x": 0,
+                      "y": 16
+                    },
+                    "hiddenSeries": false,
+                    "id": 9,
+                    "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": false,
+                      "max": true,
+                      "min": true,
+                      "rightSide": true,
+                      "show": true,
+                      "sideWidth": 350,
+                      "total": false,
+                      "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pluginVersion": "7.1.0",
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": true,
+                    "steppedLine": false,
+                    "targets": [
+                      {
+                        "expr": "increase(openebs_read_block_count{job!=\"\", openebs_pv=~\"$OpenEBS\"}[1m])/(1024*1024*60)",
+                        "format": "time_series",
+                        "hide": false,
+                        "interval": "",
+                        "intervalFactor": 2,
+                        "legendFormat": "{{Read Throughput}}",
+                        "refId": "A",
+                        "step": 2
+                      },
+                      {
+                        "expr": "increase(openebs_write_block_count{job!=\"\", openebs_pv=~\"$OpenEBS\"}[1m])/(1024*1024*60)",
+                        "format": "time_series",
+                        "hide": false,
+                        "interval": "",
+                        "intervalFactor": 2,
+                        "legendFormat": "{{Write Throughput}}",
+                        "refId": "B",
+                        "step": 2
+                      }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Throughput",
+                    "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                    },
+                    "yaxes": [
+                      {
+                        "$$hashKey": "object:183",
+                        "format": "MBs",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": "0",
+                        "show": true
+                      },
+                      {
+                        "$$hashKey": "object:184",
+                        "format": "short",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": false
+                      }
+                    ],
+                    "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                    }
+                  },
+                  {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "prometheus",
+                    "description": "Latency",
+                    "fieldConfig": {
+                      "defaults": {
+                        "custom": {}
+                      },
+                      "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                      "h": 7,
+                      "w": 24,
+                      "x": 0,
+                      "y": 23
+                    },
+                    "hiddenSeries": false,
+                    "id": 5,
+                    "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": false,
+                      "max": true,
+                      "min": true,
+                      "rightSide": true,
+                      "show": true,
+                      "sideWidth": 350,
+                      "total": false,
+                      "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pluginVersion": "7.1.0",
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": true,
+                    "steppedLine": false,
+                    "targets": [
+                      {
+                        "expr": "((increase(openebs_read_time{job!=\"\", openebs_pv=~\"$OpenEBS\"}[1m]))/(increase(openebs_reads{job!=\"\", openebs_pv=~\"$OpenEBS\"}[1m])))/1000000",
+                        "format": "time_series",
+                        "hide": false,
+                        "interval": "",
+                        "intervalFactor": 2,
+                        "legendFormat": "{{Read Latency}}",
+                        "refId": "A",
+                        "step": 2
+                      },
+                      {
+                        "expr": "((increase(openebs_write_time{job!=\"\", openebs_pv=~\"$OpenEBS\"}[1m]))/(increase(openebs_writes{job!=\"\", openebs_pv=~\"$OpenEBS\"}[1m])))/1000000",
+                        "format": "time_series",
+                        "hide": false,
+                        "interval": "",
+                        "intervalFactor": 2,
+                        "legendFormat": "{{Write Latency}}",
+                        "refId": "B",
+                        "step": 2
+                      }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Latency",
+                    "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                    },
+                    "yaxes": [
+                      {
+                        "$$hashKey": "object:231",
+                        "format": "s",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": "0",
+                        "show": true
+                      },
+                      {
+                        "$$hashKey": "object:232",
+                        "format": "short",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": false
+                      }
+                    ],
+                    "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                    }
+                  }
+                ],
+                "refresh": false,
+                "schemaVersion": 26,
+                "style": "dark",
+                "tags": [],
+                "templating": {
+                  "list": [
+                    {
+                      "allValue": null,
+                      "current": {
+                        "selected": false,
+                        "text": "pvc-e747047b-2181-4661-98cd-c22c830b7e20",
+                        "value": "pvc-e747047b-2181-4661-98cd-c22c830b7e20"
+                      },
+                      "datasource": "prometheus",
+                      "definition": "",
+                      "hide": 0,
+                      "includeAll": false,
+                      "label": "OpenEBS Volume",
+                      "multi": false,
+                      "name": "OpenEBS",
+                      "options": [],
+                      "query": "label_values(openebs_size_of_volume, openebs_pv)",
+                      "refresh": 1,
+                      "regex": "",
+                      "skipUrlSync": false,
+                      "sort": 0,
+                      "tagValuesQuery": "",
+                      "tags": [],
+                      "tagsQuery": "",
+                      "type": "query",
+                      "useTags": false
+                    }
+                  ]
+                },
+                "time": {
+                  "from": "now-6h",
+                  "to": "now"
+                },
+                "timepicker": {
+                  "refresh_intervals": [
+                    "10s",
+                    "30s",
+                    "1m",
+                    "5m",
+                    "15m",
+                    "30m",
+                    "1h",
+                    "2h",
+                    "1d"
+                  ],
+                  "time_options": [
+                    "5m",
+                    "15m",
+                    "1h",
+                    "6h",
+                    "12h",
+                    "24h",
+                    "2d",
+                    "7d",
+                    "30d"
+                  ]
+                },
+                "timezone": "",
+                "title": "OpenEBS Volume Stats",
+                "uid": "JOHe1vdiz",
+                "version": 1
+              }
+kind: ConfigMap
+metadata:
+  managedFields:
+  - apiVersion: v1
+  name: grafana-dashboard-openebs-prometheus
+  namespace: monitoring
