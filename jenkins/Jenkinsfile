@@ -8,8 +8,8 @@ pipeline {
                 sh """
                 echo "Hello World"
                 chmod a+x jenkins/bash/script.sh
-                bash -c "jenkins/bash/script.sh"
-                cat jenkins/bash/hicham.txt
+                ./jenkins/bash/script.sh
+                ls
                 """
             }
         }
