@@ -7,7 +7,7 @@ pipeline {
             script {
                 sh """
                 echo "Hello World"
-                ./var/jenkins_home/workspace/example/jenkins/bash/script.sh
+                pwd
                 """
             }
         }
