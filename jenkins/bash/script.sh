@@ -1,7 +1,5 @@
 #!/bin/bash
 
-touch /mnt/hicham
-
-echo "Hicham Farhi" > /mnt/hicham
-
-cat /mnt/hicham
+touch hicham.txt
+echo "Hicham Farhi" > hicham.txt
+cat hicham.txt
