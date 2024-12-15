@@ -7,8 +7,6 @@ pipeline {
             script {
                 sh """
                 echo "Hello World"
-                pwd
-                ls
                 chmod a+x jenkins/bash/script.sh
                 bash -c "jenkins/bash/script.sh"
                 """
