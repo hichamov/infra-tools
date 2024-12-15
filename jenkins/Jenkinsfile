@@ -9,7 +9,7 @@ pipeline {
                 echo "Hello World"
                 pwd
                 ls
-                bash -c "jenkins/bash.sh"
+                bash -c "jenkins/bash/script.sh"
                 """
             }
         }
